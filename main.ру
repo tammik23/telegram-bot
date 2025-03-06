@@ -1,0 +1,15 @@
+from aiogram import Bot, Dispatcher, types
+from aiogram.utils import executor
+
+TOKEN = "7372285798:AAG3PoLucew50ld0xRLfnpxAxlWC_pDUOGY"
+bot = Bot(token=TOKEN)
+dp = Dispatcher(bot)
+
+@dp.message_handler(commands=['start'])
+async def send_welcome(message: types.Message):
+    await message.reply("Дорогой гость, добро пожаловать в Dauri Club 😏
+
+Я твой проводник в мир роскоши — скажи, что нужно, и я возьму это на себя.")
+
+if __name__ == "__main__":
+    executor.start_polling(dp, skip_updates=True)
